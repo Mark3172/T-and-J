@@ -34,7 +34,6 @@ const PhotoBooth: React.FC = () => {
 
   return (
     <div className="photo-booth-container" style={{ backgroundImage: `url(${tomAndJerryBG})` }}>
-      <h2 className="title">🐱🎬 Tom & Jerry Photo Booth 🎭🐭</h2>
 
       {!device ? (
         <div className="device-selection">
