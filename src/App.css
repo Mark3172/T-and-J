@@ -1,0 +1,21 @@
+/* 🎨 Tom & Jerry Themed Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 20px;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFD700; /* Tom & Jerry Yellow */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}

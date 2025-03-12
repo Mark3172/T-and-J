@@ -1,0 +1,107 @@
+.photo-booth-container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.device-btn {
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.device-btn:hover {
+  background-color: #ff9900;
+}
+
+.webcam {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.filter-options button {
+  background-color: #ff5733;
+  color: white;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-options button:hover {
+  background-color: #c70039;
+}
+
+.capture-btn {
+  background-color: #ff0000;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.capture-btn:hover {
+  background-color: #cc0000;
+}
+
+.photo-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-frame {
+  width: 90%;
+  max-width: 450px;
+  border: 10px solid #ffcc00;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.retake-btn {
+  background-color: #3366ff;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.retake-btn:hover {
+  background-color: #0033cc;
+}
+
+/* Filters */
+.cartoon {
+  filter: contrast(120%) saturate(150%);
+}
+
+.cheese-glow {
+  filter: brightness(1.2) sepia(30%);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.contrast {
+  filter: contrast(200%);
+}
