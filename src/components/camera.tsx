@@ -9,6 +9,7 @@ const PhotoBooth: React.FC = () => {
   const [photo, setPhoto] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>(""); // Store selected filter
   const [device, setDevice] = useState<string | null>(null); // Laptop or Mobile
+  const [facingMode, setFacingMode] = useState<string>("user"); // Front camera by default for mobile
 
   const playSound = (sound: string) => {
     new Audio(sound).play();
@@ -27,14 +28,18 @@ const PhotoBooth: React.FC = () => {
   };
 
   const getVideoConstraints = () => {
-    return device === "mobile"
-      ? { facingMode: "environment" } // 📱 Mobile: Uses Back Camera
-      : { facingMode: "user" }; // 💻 Laptop: Uses Front Camera
+    if (device === "mobile") {
+      return { facingMode: facingMode === "user" ? "user" : "environment" }; // Flip camera based on state
+    }
+    return { facingMode: "user" }; // 💻 Laptop: Uses Front Camera
+  };
+
+  const flipCamera = () => {
+    setFacingMode(facingMode === "user" ? "environment" : "user"); // Toggle between front and back cameras
   };
 
   return (
     <div className="photo-booth-container" style={{ backgroundImage: `url(${tomAndJerryBG})` }}>
-
       {!device ? (
         <div className="device-selection">
           <h3>Choose Your Device:</h3>
@@ -51,6 +56,9 @@ const PhotoBooth: React.FC = () => {
                 className={`webcam ${filter}`}
                 videoConstraints={getVideoConstraints()}
               />
+              {device === "mobile" && (
+                <button onClick={flipCamera} className="flip-btn">🔄 Flip Camera</button>
+              )}
               <div className="filter-options">
                 <button onClick={() => setFilter("")}>No Filter</button>
                 <button onClick={() => setFilter("cartoon")}>Cartoonify</button>
