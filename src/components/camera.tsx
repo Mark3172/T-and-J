@@ -9,7 +9,7 @@ const PhotoBooth: React.FC = () => {
   const [photo, setPhoto] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>(""); // Store selected filter
   const [device, setDevice] = useState<string | null>(null); // Laptop or Mobile
-  const [facingMode, setFacingMode] = useState<string>("user"); // Front camera by default for mobile
+  const [facingMode, setFacingMode] = useState<string>("user"); // Default: Front camera for mobile
 
   const playSound = (sound: string) => {
     new Audio(sound).play();
@@ -35,7 +35,7 @@ const PhotoBooth: React.FC = () => {
   };
 
   const flipCamera = () => {
-    setFacingMode(facingMode === "user" ? "environment" : "user"); // Toggle between front and back cameras
+    setFacingMode(facingMode === "user" ? "environment" : "user"); // Toggle between front & back cameras
   };
 
   return (
@@ -57,7 +57,9 @@ const PhotoBooth: React.FC = () => {
                 videoConstraints={getVideoConstraints()}
               />
               {device === "mobile" && (
-                <button onClick={flipCamera} className="flip-btn">🔄 Flip Camera</button>
+                <button onClick={flipCamera} className="flip-btn">
+                  🔄 Flip Camera <span className="flip-icon">🔃</span>
+                </button>
               )}
               <div className="filter-options">
                 <button onClick={() => setFilter("")}>No Filter</button>
@@ -65,6 +67,11 @@ const PhotoBooth: React.FC = () => {
                 <button onClick={() => setFilter("cheese-glow")}>🧀 Cheese Glow</button>
                 <button onClick={() => setFilter("sepia")}>Old Cartoon</button>
                 <button onClick={() => setFilter("contrast")}>High Contrast</button>
+                <button onClick={() => setFilter("candy-pop")}>🍬 Candy Pop</button>
+                <button onClick={() => setFilter("spooky-glow")}>🎃 Spooky Glow</button>
+                <button onClick={() => setFilter("soft-pastel")}>🌸 Soft Pastel</button>
+                <button onClick={() => setFilter("ice-cool")}>💎 Ice Cool</button>
+                <button onClick={() => setFilter("fiery-contrast")}>🔥 Fiery Contrast</button>
               </div>
               <button onClick={capturePhoto} className="capture-btn">📸 Capture</button>
             </>

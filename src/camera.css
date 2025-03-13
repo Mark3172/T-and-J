@@ -1,3 +1,4 @@
+/* 🏠 Main Container */
 .photo-booth-container {
   background-size: cover;
   background-position: center;
@@ -11,6 +12,7 @@
   font-family: "Comic Sans MS", cursive;
 }
 
+/* 📱 Device Selection Buttons */
 .device-btn {
   background-color: #ffcc00;
   padding: 10px 20px;
@@ -26,6 +28,7 @@
   background-color: #ff9900;
 }
 
+/* 🎥 Webcam */
 .webcam {
   width: 80%;
   max-width: 400px;
@@ -33,6 +36,7 @@
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* 🎨 Filter Options */
 .filter-options button {
   background-color: #ff5733;
   color: white;
@@ -41,26 +45,32 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .filter-options button:hover {
   background-color: #c70039;
 }
 
+/* 📸 Capture Button */
 .capture-btn {
   background-color: #ff0000;
-  padding: 10px 20px;
+  padding: 14px 24px;
   font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
   border: none;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .capture-btn:hover {
   background-color: #cc0000;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* 🖼️ Photo Preview */
 .photo-preview {
   position: relative;
   display: flex;
@@ -68,6 +78,7 @@
   align-items: center;
 }
 
+/* 🖼️ Photo Frame */
 .photo-frame {
   width: 90%;
   max-width: 450px;
@@ -76,6 +87,7 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* 🔄 Retake Button */
 .retake-btn {
   background-color: #3366ff;
   padding: 10px;
@@ -83,13 +95,44 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .retake-btn:hover {
   background-color: #0033cc;
 }
 
-/* Filters */
+/* 🔄 Flip Camera Button (Fun Tom & Jerry Style) */
+.flip-btn {
+  background-color: #ffcc00;
+  color: #75250d;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  margin-top: 15px;
+  animation: bounce 2s infinite; /* Add fun animation */
+}
+
+.flip-btn:hover {
+  transform: scale(1.1);
+  background-color: #ffa500;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎭 Flip Button Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* 📸 More Cartoon Filters */
 .cartoon {
   filter: contrast(120%) saturate(150%);
 }
@@ -104,4 +147,46 @@
 
 .contrast {
   filter: contrast(200%);
+}
+
+/* 🎭 New Filters */
+.black-white {
+  filter: grayscale(100%);
+}
+
+.vintage {
+  filter: sepia(80%) contrast(120%);
+}
+
+.pop-art {
+  filter: hue-rotate(90deg) saturate(300%);
+}
+
+.glow {
+  filter: brightness(1.5) contrast(130%);
+}
+
+/* 🍬 Candy Pop – Bright & vibrant colors */
+.candy-pop {
+  filter: saturate(250%) contrast(120%) brightness(110%);
+}
+
+/* 🎃 Spooky Glow – Dark & eerie with a ghostly effect */
+.spooky-glow {
+  filter: brightness(70%) contrast(180%) sepia(40%);
+}
+
+/* 🌸 Soft Pastel – Light pastel shades, like an Instagram filter */
+.soft-pastel {
+  filter: brightness(120%) saturate(80%) hue-rotate(320deg);
+}
+
+/* 💎 Ice Cool – Gives a cool, blue-toned frosty effect */
+.ice-cool {
+  filter: contrast(120%) brightness(90%) hue-rotate(200deg);
+}
+
+/* 🔥 Fiery Contrast – Warm & high contrast effect */
+.fiery-contrast {
+  filter: contrast(250%) brightness(110%) saturate(130%) hue-rotate(-20deg);
 }
